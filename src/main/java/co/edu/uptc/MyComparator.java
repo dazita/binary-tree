@@ -2,23 +2,15 @@ package co.edu.uptc;
 
 import java.util.Comparator;
 
-public class MyComparator implements Comparator<Person>{
+public class MyComparator{
 
-    private String criteria;
+    public static Comparator<Person> comparator = new Comparator<Person>() {
 
-    public MyComparator(String criteria){
-        this.criteria = criteria;
-    }
-
-    @Override
-    public int compare(Person o1, Person o2) {
-        switch (criteria) {
-            case "name":
-                return o1.getName().compareTo(o2.getName());
-            case "age":
-                return Integer.compare(o1.getAge(), o2.getAge());
+        @Override
+        public int compare(Person o1, Person o2) {
+          return o1.getName().compareTo(o2.getName());
         }
-        return 0;
-    }
+        
+    };
     
 }
