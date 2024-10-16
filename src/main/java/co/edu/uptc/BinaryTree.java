@@ -11,7 +11,7 @@ public class BinaryTree<T> {
         this.comparator = comparator;
     }
 
-    public void add(T value) {
+    public boolean add(T value) {
         Node<T> newNode = new Node<>(value);
         if (firstNode == null) {
             firstNode = newNode;
@@ -23,6 +23,7 @@ public class BinaryTree<T> {
                 lastNode.setMinor(newNode);
             }
         }
+        return true;
     }
 
     private Node<T> findWhereToAdd(T value) {
